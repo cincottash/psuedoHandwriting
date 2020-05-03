@@ -7,7 +7,7 @@ def main():
 
 	canvas, alphabetDict0, alphabetDict1 = setup()
 
-	sentence = "be spoiled now and expect transparent versions all the time"
+	sentence = "pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy"
 
 	# while(True):
 	paper = pygame.image.load("assets/paper.png")
