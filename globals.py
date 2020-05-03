@@ -8,5 +8,11 @@ canvasHeight = 2200
 
 #alphabetImageList = []
 
-spacing = 15
+space = 30
+
+offCenterCharList = ["y", "p", "g", "j", "q"]
+
+xStart = canvasWidth/6 - 10
+yStart = canvasHeight/6 - 22
+lineGap = 69
 
