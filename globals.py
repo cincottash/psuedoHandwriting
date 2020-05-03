@@ -4,7 +4,7 @@ WHITE = (255, 255, 255)
 canvasWidth = 1700
 canvasHeight = 2200
 
-space = 30
+space = 40
 
 offCenterCharList = ["y", "p", "g", "j", "q"]
 

@@ -7,7 +7,7 @@ def main():
 
 	canvas, alphabetDict0, alphabetDict1 = setup()
 
-	sentence = "pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy pqjgy"
+	sentence = "the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog "
 
 	# while(True):
 	paper = pygame.image.load("assets/paper.png")
@@ -52,11 +52,15 @@ def displaySentence(canvas, sentence, alphabetDict0, alphabetDict1):
 			offCenterChar = 0
 			if(char in offCenterCharList):
 				offCenterChar = 1
+			#Adds random spacing between each letter
+			letterGap = random.uniform(0, 10)
+
+			collectiveSpacing += letterGap
 			canvas.blit(alphabetDict[char], (xStart + collectiveSpacing, yStart + offCenterChar*alphabetDict[char].get_rect().size[1]/2 + currentLine * lineGap - alphabetDict[char].get_rect().size[1]  + random.uniform(-7, 7)))
 			collectiveSpacing += alphabetDict[char].get_rect().size[0]
 		#It's a space
 		else:
-			collectiveSpacing += space
+			collectiveSpacing += space * random.uniform(0.8, 1.5)
 
 if __name__ == '__main__':
 	main()
