@@ -41,8 +41,11 @@ def displaySentence(canvas, sentence, alphabetDict0, alphabetDict1):
 			alphabetDict = alphabetDict1
 
 		if(char in alphabetDict):
+			#Adds random spacing between each letter
+			letterGap = random.uniform(0, 10)
+
 			#Check if we're about to go over the page
-			if(xStart + collectiveSpacing + alphabetDict[char].get_rect().size[0] > canvasWidth):
+			if(xStart + collectiveSpacing + letterGap + alphabetDict[char].get_rect().size[0] > canvasWidth):
 				#Move to next line
 				currentLine += 1
 
@@ -56,15 +59,20 @@ def displaySentence(canvas, sentence, alphabetDict0, alphabetDict1):
 			offCenterChar = 0
 			if(char in offCenterCharList):
 				offCenterChar = 1
-			#Adds random spacing between each letter
-			letterGap = random.uniform(0, 10)
+			
 
 			collectiveSpacing += letterGap
 			canvas.blit(alphabetDict[char], (xStart + collectiveSpacing, yStart + offCenterChar*alphabetDict[char].get_rect().size[1]/2 + currentLine * lineGap - alphabetDict[char].get_rect().size[1]  + random.uniform(-7, 7)))
 			collectiveSpacing += alphabetDict[char].get_rect().size[0]
 		#It's a space
-		else:
+		elif(char == " "):
 			collectiveSpacing += space * random.uniform(0.8, 1.5)
+		#TODO: ELSE: PUT "?" CHAR THERE OR SOMETHING
+		else:
+			unknownChar = pygame.image.load("assets/unknownChar.png")
+			canvas.blit(unknownChar, (xStart + collectiveSpacing, yStart + currentLine * lineGap - unknownChar.get_rect().size[1]))
+			collectiveSpacing += unknownChar.get_rect().size[0]
+
 
 if __name__ == '__main__':
 	main()
