@@ -32,6 +32,7 @@ def displaySentence(canvas, sentence, alphabetDict0, alphabetDict1):
 	currentLine = 0
 
 	for char in list(sentence):
+			
 		#Pick a random dict to use for this specific char
 		dictNum = random.randint(0, 1)
 		if(dictNum == 0):
@@ -47,6 +48,9 @@ def displaySentence(canvas, sentence, alphabetDict0, alphabetDict1):
 
 				#Reset spacing
 				collectiveSpacing = 0
+
+				#add random margin on new line
+				collectiveSpacing += random.uniform(0, 20)
 
 			#Align to bottom of line and keep even spacing and varying height, also check if our char can go below line
 			offCenterChar = 0
