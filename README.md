@@ -43,4 +43,4 @@ A list of required libraries is located in requirments.txt and can be installed 
 ## Known Issues
 
 ## TODO:
-Need to add some new chars such as ".", "," and "-"
+Need to add some new chars such as . , and -
