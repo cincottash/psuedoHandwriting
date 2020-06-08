@@ -189,6 +189,8 @@ def displayDocument(canvas, document):
 			collectiveSpacing += letterGap
 
 			canvas.blit(periodImage, (xStart + collectiveSpacing, yStart + currentLine * lineGap - periodImage.get_rect().size[1]  + random.uniform(-7, 7)))
+			collectiveSpacing += periodImage.get_rect().size[0]
+
 		
 		#If char not in our dict, put unknown char symbol
 		else:
