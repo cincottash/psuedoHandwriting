@@ -1,23 +1,23 @@
 import pyautogui as pag
 
-startPoint = (115, 694)
+startPoint = (114, 725)
 
 def main():
 	#Click on page
 	pag.click(startPoint)
 	
-	for dictIndex in range(10, 54):
+	for dictIndex in range(10, 52):
 		
 
 		#Start with 1 WS gap below last curly brace and paste the example Dict
 		pag.hotkey('ctrl', 'v')
 
-		#Press up 29 times
-		for i in range(29):
+		#Move to the dict name
+		for i in range(66):
 			pag.press('up')
 
 		#Go over 8 times
-		for j in range(11):
+		for j in range(13):
 			pag.press('right')
 		
 		#Update the dictNum
@@ -28,29 +28,25 @@ def main():
 		for k in range(2):
 			pag.press('down')
 
-		for l in range(20):
+		for l in range(24):
 			pag.press('right')
 
-		# for number in digits:
-		# 	pag.press(str(number))
 
-		#TODO FIX THIS
 		# #Iterate over each letter in the dict
-		numIndex = 0
+		digits = [int(x) for x in str(dictIndex)]
 		for number in digits:
 			pag.press(str(number))
 
-		# #Handle the 1=9 nums
-		for numIndex in range(25):
+		for i in range(0, 61):
 			pag.press('down')
 			pag.press('left')
 			pag.press('left')
 			for number in digits:
 				pag.press(str(number))
-
-		for u in range(5):
+			#pag.press(str(dictIndex))
+		for u in range(4):
 			pag.press('down')
-		pag.press('tab')
+		# pag.press('tab')
 
 
 

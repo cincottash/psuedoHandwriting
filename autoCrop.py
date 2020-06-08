@@ -2,9 +2,9 @@ import pyautogui as pag
 
 pag.PAUSE = 1.0
 
-fileManager = (411, 1036)
-gimp = (837, 1034)
-layer = (242, 46)
+fileManager = (375, 1040)
+gimp = (745, 1040)
+layer = (240, 45)
 transparency = (332, 316)
 addAlpha = (560, 320)
 select = (100, 45)
@@ -28,45 +28,50 @@ pag.moveTo(fileManager)
 pag.click()
 
 #open documents
-pag.moveTo(330, 298)
-pag.click()
+for o in range(5):
+	pag.press('down')
+pag.press('enter')
 
 #open coding projects
-pag.moveTo(530, 263)
-pag.click(clicks = 2)
+for n in range(2):
+	pag.press('down')
+pag.press('enter')
 
+pag.PAUSE = 0.2
 #Open project folder
-pag.scroll(-100)
-pag.moveTo(470, 420)
-pag.click(clicks = 2)
+for m in range(14):
+	pag.press('down')
+pag.press('enter')
+
 
 #Open assets
-pag.moveTo(475, 310)
-pag.click(clicks = 2)
-pag.scroll(-50)
+for l in range(3):
+	pag.press('down')
+pag.press('enter')
 
-#Open our folder we wanna work on
-#Open w
-pag.moveTo(470, 555)
-pag.click(clicks = 2)
-#pag.scroll(-300)
+#Open our folder we wanna work on 
+letter = "Z"
+for h in range(62):
+	pag.press('down')
+pag.press('enter')
 
-#Double click the first image
-pag.moveTo(550, 220)
-pag.click(clicks = 2)
-
+#open last image
+for k in range(56):
+	pag.press('down')
+pag.PAUSE = 0.5
+pag.press('enter')
 
 #START MAIN LOOP
-for i in range(2, 54):
-	pag.PAUSE = 1.0
+for i in range(56):
 	#Start with image open in gimp and delete the old one
-	pag.moveTo(682, 260)
+	#pag.moveTo(682, 260)
 
 	pag.moveTo(fileManager)
 	pag.click()
+
 	pag.press('delete')
 	pag.PAUSE = 0.4
-
+	
 	#Open up gimp again
 	pag.moveTo(gimp)
 	pag.click()
@@ -114,9 +119,10 @@ for i in range(2, 54):
 	pag.moveTo(exportAs)
 	pag.click()
 
-	fileName = "z" + str(i)
+	fileName = letter + str(i)
 	pag.typewrite(fileName)
 
+ 	#GOOD UP TO HERE
 	pag.moveTo(export)
 	pag.click()
 
@@ -133,11 +139,18 @@ for i in range(2, 54):
 	pag.click()
 	pag.moveTo(openn)
 	pag.click()
-	pag.moveTo(650, 255)
-	#pag.scroll(-500)
-	#pag.moveTo(680, 755)
-	pag.click()
+
+
+	
+	#Click the last image
+	pag.PAUSE = 0.1
+	for j in range(56):
+		pag.press('down')
+	pag.PAUSE = 1.0
 	pag.press('enter')
+	# #pag.moveTo(680, 755)
+	# # pag.click()
+	# pag.press('enter')
 
 
 

@@ -148,6 +148,7 @@ def displayDocument(canvas, document):
 
 		if(char in alphabetDict):
 			#Adds random spacing between each letter
+			#TODO add the ability to overlap
 			letterGap = random.uniform(0, 10)
 
 			#Check if we're about to go over the page
