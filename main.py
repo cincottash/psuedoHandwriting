@@ -168,8 +168,10 @@ def displayDocument(canvas, document):
 				offCenterChar = 1
 
 			collectiveSpacing += letterGap
+
+			yOffset = random.uniform(-7, 7)
 			
-			canvas.blit(alphabetDict[char], (xStart + collectiveSpacing, yStart + offCenterChar*alphabetDict[char].get_rect().size[1]/2 + currentLine * lineGap - alphabetDict[char].get_rect().size[1]  + random.uniform(-7, 7)))
+			canvas.blit(alphabetDict[char], (xStart + collectiveSpacing, yStart + offCenterChar*alphabetDict[char].get_rect().size[1]/2 + currentLine * lineGap - alphabetDict[char].get_rect().size[1]  + yOffset))
 			
 			#Add a gap to compensate for the image length
 			collectiveSpacing += alphabetDict[char].get_rect().size[0]
@@ -188,7 +190,9 @@ def displayDocument(canvas, document):
 			
 			collectiveSpacing += letterGap
 
-			canvas.blit(periodImage, (xStart + collectiveSpacing, yStart + currentLine * lineGap - periodImage.get_rect().size[1]  + random.uniform(-7, 7)))
+			yOffset = random.uniform(-7, 7)
+
+			canvas.blit(periodImage, (xStart + collectiveSpacing, yStart + currentLine * lineGap - periodImage.get_rect().size[1]  + yOffset))
 			collectiveSpacing += periodImage.get_rect().size[0]
 
 		
