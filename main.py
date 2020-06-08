@@ -37,7 +37,8 @@ def displayDocument(canvas, document):
 	#Current horizontal line
 	currentLine = 0
 
-	for char in list(document):
+	#For some reason the first char is blank and  is unknown, so just skip the first char
+	for char in list(document)[1:]:
 			
 		#Pick a random dict to use for this specific char
 		dictNum = random.randint(0, 52)
@@ -198,6 +199,7 @@ def displayDocument(canvas, document):
 		
 		#If char not in our dict, put unknown char symbol
 		else:
+			print(char)
 			unknownChar = pygame.image.load("assets/unknownChar.png")
 			
 			canvas.blit(unknownChar, (xStart + collectiveSpacing, yStart + currentLine * lineGap - unknownChar.get_rect().size[1]))
