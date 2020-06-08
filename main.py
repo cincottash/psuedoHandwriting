@@ -145,7 +145,7 @@ def displayDocument(canvas, document):
 			alphabetDict = alphabetDict50
 		elif(dictNum == 51):
 			alphabetDict = alphabetDict51
-
+		#TODO make some more periods and add them to dicts, for now I am justing using a single period image
 		if(char in alphabetDict):
 			#Adds random spacing between each letter
 			#TODO add the ability to overlap
@@ -181,6 +181,14 @@ def displayDocument(canvas, document):
 		elif(char == "\n"):
 			currentLine +=1 
 			collectiveSpacing = 0
+		elif(char == "."):
+			periodImage = pygame.image.load("assets/period.png")
+
+			letterGap = random.uniform(0, 10)
+			
+			collectiveSpacing += letterGap
+
+			canvas.blit(periodImage, (xStart + collectiveSpacing, yStart + currentLine * lineGap - periodImage.get_rect().size[1]  + random.uniform(-7, 7)))
 		
 		#If char not in our dict, put unknown char symbol
 		else:
