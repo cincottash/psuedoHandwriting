@@ -178,6 +178,9 @@ def displayDocument(canvas, document):
 		elif(char == " "):
 			#A random sized space
 			collectiveSpacing += space * random.uniform(0.8, 1.5)
+		elif(char == "\n"):
+			currentLine +=1 
+			collectiveSpacing = 0
 		
 		#If char not in our dict, put unknown char symbol
 		else:
